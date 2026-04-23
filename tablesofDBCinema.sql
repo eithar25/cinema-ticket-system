@@ -61,7 +61,7 @@ create table Booking (
     bookingId int primary key identity(1,1),
     bookingDate datetime,
     status varchar(50),
-    totalPrice money,
+    -- totalPrice money,
     userId int,
     showId int,
     foreign key (userId) references [User](userId),
@@ -92,27 +92,27 @@ create table Payment (
     bookingId int,
     paymentMethod varchar(50),
     date datetime,
-    amount money,
+    --amount money,
     status varchar(50),
     primary key (transactionId, bookingId), 
     foreign key (bookingId) references Booking(bookingId) on delete cascade
 );
 
-GO
-CREATE TRIGGER update_total_price ON has
-AFTER INSERT, UPDATE, DELETE
-AS
-BEGIN
-    UPDATE Booking
-    SET totalPrice = (
-        SELECT ISNULL(SUM(S.price), 0) 
-        FROM has H
-        JOIN Seat S ON H.seatNumber = S.seatNumber AND H.hallId = S.hallId
-        WHERE H.bookingId = Booking.bookingId
-    )
-    WHERE bookingId IN (SELECT bookingId FROM inserted)
-       OR bookingId IN (SELECT bookingId FROM deleted);
-END;
+-- GO
+-- CREATE TRIGGER update_total_price ON has
+-- AFTER INSERT, UPDATE, DELETE
+-- AS
+-- BEGIN
+--     UPDATE Booking
+--     SET totalPrice = (
+--         SELECT ISNULL(SUM(S.price), 0) 
+--         FROM has H
+--         JOIN Seat S ON H.seatNumber = S.seatNumber AND H.hallId = S.hallId
+--         WHERE H.bookingId = Booking.bookingId
+--     )
+--     WHERE bookingId IN (SELECT bookingId FROM inserted)
+--        OR bookingId IN (SELECT bookingId FROM deleted);
+-- END;
 
 
 select * from Movie;
