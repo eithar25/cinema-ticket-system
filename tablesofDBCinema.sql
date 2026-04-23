@@ -15,7 +15,8 @@ create table [User] (
     userId int primary key identity(1,1),
     name varchar(100) not null,
     email varchar(100) unique not null,
-    password varchar(255) not null
+    password varchar(255) not null,
+    balance money default 0
 );
 
 create table User_Phone (
@@ -90,7 +91,7 @@ create table Includes (
 create table Payment (
     transactionId int identity(1,1),
     bookingId int,
-    paymentMethod varchar(50),
+    -- paymentMethod varchar(50),
     date datetime,
     --amount money,
     status varchar(50),
