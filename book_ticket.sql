@@ -88,11 +88,12 @@ BEGIN
         WHERE i.showId = @showId
           AND i.hallId = @hallId
           AND i.status = 'Available';
-        SELECT @totalPrice = ISNULL(SUM(S.price), 0)
+        SELECT @totalPrice = ISNULL(SUM(I.price), 0)
         FROM Has H
-        JOIN Seat S 
-            ON H.seatNumber = S.seatNumber 
-           AND H.hallId = S.hallId
+        JOIN Includes I
+             ON H.seatNumber = I.seatNumber
+             AND H.hallId  = I.hallId
+             AND I.showId  = @showId
         WHERE H.bookingId = @bookingId;
         INSERT INTO Payment (bookingId, paymentMethod, date, amount, status)
         VALUES (@bookingId, @paymentMethod, GETDATE(), @totalPrice, 'Success');
