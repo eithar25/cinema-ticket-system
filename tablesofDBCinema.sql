@@ -1,137 +1,98 @@
-create table Movie (
-    movieId int primary key identity(1,1),
-    duration int,
-    name varchar(255) not null,
-    rating varchar(10),
-    classification varchar(50)
+CREATE TABLE Movie (
+    MovieID INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(255) NOT NULL,
+    Duration INT,
+    Rating VARCHAR(10),
+    Classification VARCHAR(100)
 );
 
-create table Hall (
-    hallId int primary key identity(1,1),
-    capacity int
+CREATE TABLE Hall (
+    HallID INT PRIMARY KEY IDENTITY(1,1),
+    Capacity INT
 );
 
-create table [User] (
-    userId int primary key identity(1,1),
-    name varchar(100) not null,
-    email varchar(100) unique not null,
-    password varchar(255) not null,
-    balance money default 0
+CREATE TABLE [User] (
+    UserID INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE,
+    Password VARCHAR(255),
+    balance DECIMAL(10, 2) DEFAULT 0.00
 );
 
-create table User_Phone (
-    userId int,
-    phoneNumber varchar(20),
-    primary key (userId, phoneNumber),
-    foreign key (userId) references [User](userId) on delete cascade
+/* --- 2. SECONDARY TABLES (Direct Dependencies) --- */
+
+-- Represents the bridge between Movies and Halls at a specific time
+CREATE TABLE Show (
+    ShowID INT PRIMARY KEY IDENTITY(1,1),
+    MovieID INT,
+    HallID INT,
+    Date DATE,
+    start_time TIME,
+    CONSTRAINT FK_Show_Movie FOREIGN KEY (MovieID) REFERENCES Movie(MovieID),
+    CONSTRAINT FK_Show_Hall FOREIGN KEY (HallID) REFERENCES Hall(HallID)
 );
 
-GO
-CREATE FUNCTION CalculateEndTime(@MovieID INT, @StartTime TIME)
-RETURNS TIME
-AS
-BEGIN
-    DECLARE @Dur INT;
-    SELECT @Dur = duration FROM Movie WHERE movieId = @MovieID;
-    RETURN DATEADD(minute, ISNULL(@Dur, 0), @StartTime);
-END;
-GO
-
-create table Show (
-    showId int primary key identity(1,1),
-    movieId int,
-    date date,
-    startTime time,
-    hallId int,
-    endTime AS dbo.CalculateEndTime(movieId, startTime),
-    foreign key (movieId) references Movie(movieId),
-    foreign key (hallId) references Hall(hallId)
+-- Physical seats located in a specific hall
+CREATE TABLE Seat (
+    SeatNumber INT , -- Usually a fixed physical ID
+    HallID INT ,
+    Raw_number INT,
+    Type VARCHAR(50),
+    Price DECIMAL(10, 2),
+    constraint seat_pk primary key(seatNumber, HallID),
+    CONSTRAINT FK_Seat_Hall FOREIGN KEY (HallID) REFERENCES Hall(HallID)
 );
 
-create table Seat (
-    seatNumber int,
-    rowNumber varchar(5),
-    price money,
-    hallId int,
-    type varchar(50),
-    primary key (seatNumber, hallId),
-    foreign key (hallId) references Hall(hallId)
+-- Handles multi-valued phone numbers for users
+CREATE TABLE user_phone (
+    UserID INT,
+    PhoneNumber VARCHAR(20),
+    PRIMARY KEY (UserID, PhoneNumber),
+    CONSTRAINT FK_Phone_User FOREIGN KEY (UserID) REFERENCES [User](UserID)
 );
 
-create table Booking (
-    bookingId int primary key identity(1,1),
-    bookingDate datetime,
-    status varchar(50),
-    -- totalPrice money,
-    userId int,
-    showId int,
-    foreign key (userId) references [User](userId),
-    foreign key (showId) references Show(showId)
+/* --- 3. TRANSACTIONAL TABLES (Multi-level Dependencies) --- */
+
+-- Main booking record
+CREATE TABLE Booking (
+    BookingID INT PRIMARY KEY IDENTITY(1,1),
+    ShowID INT,
+    UserID INT,
+    Status VARCHAR(50),
+    Booking_date DATETIME,
+    CONSTRAINT FK_Booking_Show FOREIGN KEY (ShowID) REFERENCES Show(ShowID),
+    CONSTRAINT FK_Booking_User FOREIGN KEY (UserID) REFERENCES [User](UserID)
 );
 
-create table Has (
-    seatNumber int,
-    hallId int,
-    bookingId int,
-    primary key (seatNumber, hallId, bookingId),
-    foreign key (seatNumber, hallId) references Seat(seatNumber, hallId),
-    foreign key (bookingId) references Booking(bookingId)
+-- Junction table: Which seats belong to which booking
+CREATE TABLE Has (
+    BookingID INT,
+    SeatNumber INT,
+    HallID INT, 
+    PRIMARY KEY (BookingID, SeatNumber, HallID),
+    CONSTRAINT FK_Has_Booking FOREIGN KEY (BookingID) REFERENCES Booking(BookingID),
+    CONSTRAINT FK_Has_Seat FOREIGN KEY (SeatNumber, HallID) REFERENCES Seat(SeatNumber, HallID)
 );
 
-create table Includes (
-    seatNumber int,
-    showId int,
-    status varchar(50),
-    hallId int,
-    primary key (seatNumber, showId, hallId),
-    foreign key (seatNumber, hallId) references Seat(seatNumber, hallId),
-    foreign key (showId) references Show(showId)
+
+-- Tracks availability of specific seats for specific shows
+CREATE TABLE Includes (
+    SeatNumber INT,
+    HallID INT,
+    ShowID INT,
+    Status VARCHAR(50),
+    Price DECIMAL(10,2), -- Added here for dynamic pricing support
+    PRIMARY KEY (SeatNumber, HallID, ShowID),
+    CONSTRAINT FK_Includes_Seat FOREIGN KEY (SeatNumber, HallID) REFERENCES Seat(SeatNumber, HallID),
+    CONSTRAINT FK_Includes_Show FOREIGN KEY (ShowID) REFERENCES Show(ShowID)
 );
 
-create table Payment (
-    transactionId int identity(1,1),
-    bookingId int,
-    -- paymentMethod varchar(50),
-    date datetime,
-    --amount money,
-    status varchar(50),
-    primary key (transactionId, bookingId), 
-    foreign key (bookingId) references Booking(bookingId) on delete cascade
+-- Final payment records linked to bookings
+CREATE TABLE Payment (
+    TransactionID INT IDENTITY(1,1),
+    BookingID INT,
+    PRIMARY key(TransactionID, BookingID ),
+    Status VARCHAR(50),
+    Date DATETIME,
+    CONSTRAINT FK_Payment_Booking FOREIGN KEY (BookingID) REFERENCES Booking(BookingID)
 );
-
--- GO
--- CREATE TRIGGER update_total_price ON has
--- AFTER INSERT, UPDATE, DELETE
--- AS
--- BEGIN
---     UPDATE Booking
---     SET totalPrice = (
---         SELECT ISNULL(SUM(S.price), 0) 
---         FROM has H
---         JOIN Seat S ON H.seatNumber = S.seatNumber AND H.hallId = S.hallId
---         WHERE H.bookingId = Booking.bookingId
---     )
---     WHERE bookingId IN (SELECT bookingId FROM inserted)
---        OR bookingId IN (SELECT bookingId FROM deleted);
--- END;
-
-
-select * from Movie;
-
-select * from Hall;
-
-select * from [User];
-
-select * from User_Phone;
-
-select * from Show;
-
-select * from Seat;
-
-select * from Booking;
-
-select * from Has;
-
-select * from Includes;
-
-select * from Payment;
