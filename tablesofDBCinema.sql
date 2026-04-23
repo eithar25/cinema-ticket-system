@@ -50,7 +50,6 @@ create table Show (
 create table Seat (
     seatNumber int,
     rowNumber varchar(5),
-    price money,
     hallId int,
     type varchar(50),
     primary key (seatNumber, hallId),
@@ -80,6 +79,7 @@ create table Has (
 create table Includes (
     seatNumber int,
     showId int,
+    price money,
     status varchar(50),
     hallId int,
     primary key (seatNumber, showId, hallId),
@@ -99,19 +99,40 @@ create table Payment (
 );
 
 GO
-CREATE TRIGGER update_total_price ON has
+-- CREATE TRIGGER update_total_price ON has
+-- AFTER INSERT, UPDATE, DELETE
+-- AS
+-- BEGIN
+--     UPDATE Booking
+--     SET totalPrice = (
+--         SELECT ISNULL(SUM(S.price), 0) 
+--         FROM has H
+--         JOIN Seat S ON H.seatNumber = S.seatNumber AND H.hallId = S.hallId
+--         WHERE H.bookingId = Booking.bookingId
+--     )
+--     WHERE bookingId IN (SELECT bookingId FROM inserted)
+--        OR bookingId IN (SELECT bookingId FROM deleted);
+-- END;
+    GO
+ALTER TRIGGER update_total_price ON Has
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    UPDATE Booking
-    SET totalPrice = (
-        SELECT ISNULL(SUM(S.price), 0) 
-        FROM has H
-        JOIN Seat S ON H.seatNumber = S.seatNumber AND H.hallId = S.hallId
-        WHERE H.bookingId = Booking.bookingId
+    -- We update the Booking table
+    UPDATE B
+    SET B.totalPrice = (
+ 
+        SELECT ISNULL(SUM(I.price), 0)
+        FROM Has H    -- get the booking here and then join the booking with includes to get the total price 
+        JOIN Booking BK ON H.bookingId = BK.bookingId
+        JOIN Includes I ON H.seatNumber = I.seatNumber 
+                       AND H.hallId = I.hallId 
+                       AND BK.showId = I.showId -- Matching the specific show
+        WHERE H.bookingId = B.bookingId
     )
-    WHERE bookingId IN (SELECT bookingId FROM inserted)
-       OR bookingId IN (SELECT bookingId FROM deleted);
+    FROM Booking B
+    WHERE B.bookingId IN (SELECT bookingId FROM inserted)
+       OR B.bookingId IN (SELECT bookingId FROM deleted);
 END;
 
 select * from Movie;
