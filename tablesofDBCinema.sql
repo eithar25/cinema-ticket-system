@@ -19,9 +19,7 @@ CREATE TABLE [User] (
     balance DECIMAL(10, 2) DEFAULT 0.00
 );
 
-/* --- 2. SECONDARY TABLES (Direct Dependencies) --- */
 
--- Represents the bridge between Movies and Halls at a specific time
 CREATE TABLE Show (
     ShowID INT PRIMARY KEY IDENTITY(1,1),
     MovieID INT,
@@ -32,9 +30,9 @@ CREATE TABLE Show (
     CONSTRAINT FK_Show_Hall FOREIGN KEY (HallID) REFERENCES Hall(HallID)
 );
 
--- Physical seats located in a specific hall
+
 CREATE TABLE Seat (
-    SeatNumber INT , -- Usually a fixed physical ID
+    SeatNumber INT , 
     HallID INT ,
     Raw_number INT,
     Type VARCHAR(50),
@@ -43,7 +41,7 @@ CREATE TABLE Seat (
     CONSTRAINT FK_Seat_Hall FOREIGN KEY (HallID) REFERENCES Hall(HallID)
 );
 
--- Handles multi-valued phone numbers for users
+
 CREATE TABLE user_phone (
     UserID INT,
     PhoneNumber VARCHAR(20),
@@ -51,9 +49,7 @@ CREATE TABLE user_phone (
     CONSTRAINT FK_Phone_User FOREIGN KEY (UserID) REFERENCES [User](UserID)
 );
 
-/* --- 3. TRANSACTIONAL TABLES (Multi-level Dependencies) --- */
 
--- Main booking record
 CREATE TABLE Booking (
     BookingID INT PRIMARY KEY IDENTITY(1,1),
     ShowID INT,
@@ -64,7 +60,7 @@ CREATE TABLE Booking (
     CONSTRAINT FK_Booking_User FOREIGN KEY (UserID) REFERENCES [User](UserID)
 );
 
--- Junction table: Which seats belong to which booking
+
 CREATE TABLE Has (
     BookingID INT,
     SeatNumber INT,
@@ -75,19 +71,18 @@ CREATE TABLE Has (
 );
 
 
--- Tracks availability of specific seats for specific shows
+
 CREATE TABLE Includes (
     SeatNumber INT,
     HallID INT,
     ShowID INT,
     Status VARCHAR(50),
-    Price DECIMAL(10,2), -- Added here for dynamic pricing support
     PRIMARY KEY (SeatNumber, HallID, ShowID),
     CONSTRAINT FK_Includes_Seat FOREIGN KEY (SeatNumber, HallID) REFERENCES Seat(SeatNumber, HallID),
     CONSTRAINT FK_Includes_Show FOREIGN KEY (ShowID) REFERENCES Show(ShowID)
 );
 
--- Final payment records linked to bookings
+
 CREATE TABLE Payment (
     TransactionID INT IDENTITY(1,1),
     BookingID INT,
