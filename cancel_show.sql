@@ -1,66 +1,56 @@
-USE [CinemaDB]
-GO
-
-/****** Object:  StoredProcedure [dbo].[CancelShow]    Script Date: 4/23/2026 8:22:20 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
 CREATE PROCEDURE [dbo].[CancelShow]
     @showId INT
 AS
 BEGIN
-    IF NOT EXISTS (SELECT 1 FROM Show WHERE showId = @showId)
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM Show WHERE ShowID = @showId)
     BEGIN
         RAISERROR('Invalid showId.', 16, 1);
         RETURN;
     END
 
-    DECLARE @deletedBookings TABLE (
+    DECLARE @RefundList TABLE (
         bookingId  INT,
         userId     INT,
-        totalPrice MONEY
+        refundAmount DECIMAL(10,2)
     );
 
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        INSERT INTO @deletedBookings (bookingId, userId, totalPrice)
-        SELECT B.bookingId, B.userId, ISNULL(SUM(S.price), 0)
+        INSERT INTO @RefundList (bookingId, userId, refundAmount)
+        SELECT B.BookingID, B.UserID, dbo.fn_CalculateTotalPrice(B.BookingID, 0)
         FROM Booking B
-        LEFT JOIN Has H ON H.bookingId = B.bookingId
-        LEFT JOIN Seat S ON S.seatNumber = H.seatNumber AND S.hallId = H.hallId
-        WHERE B.showId = @showId
-        GROUP BY B.bookingId, B.userId;
+        WHERE B.ShowID = @showId AND B.Status <> 'Cancelled';
 
-        INSERT INTO Payment (bookingId, paymentMethod, date, amount, status)
-        SELECT bookingId, 'Refund', GETDATE(), totalPrice, 'Processed'
-        FROM @deletedBookings;
+        UPDATE U
+        SET U.balance = U.balance + R.refundAmount
+        FROM [User] U
+        INNER JOIN @RefundList R ON U.UserID = R.userId;
 
-        DELETE FROM Includes
-        WHERE showId = @showId;
+        INSERT INTO Payment (BookingID, Status, Date)
+        SELECT bookingId, 'Refunded: Show Cancelled', GETDATE()
+        FROM @RefundList;
 
-        DELETE FROM Has
-        WHERE bookingId IN (SELECT bookingId FROM @deletedBookings);
+        UPDATE Booking 
+        SET Status = 'Cancelled' 
+        WHERE ShowID = @showId;
 
-        DELETE FROM Booking WHERE showId = @showId;
+        UPDATE Includes 
+        SET Status = 'Available' 
+        WHERE ShowID = @showId;
 
-        DELETE FROM Show WHERE showId = @showId;
-
-        SELECT bookingId, userId, totalPrice AS refundAmount
-        FROM @deletedBookings;
+        SELECT bookingId, userId, refundAmount
+        FROM @RefundList;
 
         COMMIT TRANSACTION;
-        PRINT 'Show and all related records deleted successfully.';
+        PRINT 'Show cancelled and all customers have been refunded successfully.';
 
     END TRY
     BEGIN CATCH
-        ROLLBACK TRANSACTION;
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
         THROW;
     END CATCH
 END
 GO
-
