@@ -8,11 +8,12 @@ AS
 BEGIN 
     DECLARE @seatStatus VARCHAR(50);
 
-    SELECT @seatStatus = status 
+    SELECT @seatStatus = Status 
     FROM Includes 
-    WHERE seatNumber = @seatNumber 
-      AND hallId = @hallid 
-      AND showId = @showid;
+    WHERE SeatNumber = @seatNumber 
+      AND HallID = @hallid 
+      AND ShowID = @showid;
 
     RETURN ISNULL(@seatStatus, 'Not Found'); 
 END;
+GO
