@@ -1,4 +1,3 @@
-
 INSERT INTO Movie (Duration, Name, Rating, Classification) VALUES 
 (148, 'Inception', '8.8', 'Sci-Fi'),
 (169, 'Interstellar', '8.7', 'Sci-Fi'),

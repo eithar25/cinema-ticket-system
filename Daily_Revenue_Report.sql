@@ -1,6 +1,3 @@
-USE CinemaBooking;
-GO
-
 SELECT 
     CAST(s.Date AS DATE) AS ShowDate,
     COUNT(DISTINCT b.BookingID) AS TotalBookings,

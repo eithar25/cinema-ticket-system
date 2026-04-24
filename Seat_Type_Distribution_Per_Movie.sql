@@ -1,6 +1,3 @@
-USE CinemaBooking;
-GO
-
 SELECT 
     m.Name AS MovieName,
     COUNT(CASE WHEN st.Type = 'Regular' THEN 1 END) AS RegularSeats,

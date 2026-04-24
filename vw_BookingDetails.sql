@@ -1,6 +1,3 @@
-USE CinemaBooking;
-GO
-
 CREATE OR ALTER VIEW vw_BookingDetails AS
 SELECT 
     b.BookingID,

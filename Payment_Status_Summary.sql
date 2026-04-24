@@ -1,6 +1,3 @@
-USE CinemaBooking;
-GO
-
 SELECT 
     p.TransactionID,
     p.BookingID,

@@ -1,5 +1,3 @@
-USE CinemaBooking;
-GO
 CREATE OR ALTER VIEW vw_AvailableSeats AS
 SELECT 
     s.ShowID,

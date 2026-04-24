@@ -1,3 +1,4 @@
+CREATE OR ALTER VIEW vw_CustomerBookings AS
 SELECT 
     U.Name AS [Customer],
     M.Name AS [Movie Name],
@@ -21,5 +22,5 @@ GROUP BY
     M.Name, 
     S.HallID,
     B.Status, 
-    B.Booking_date
-ORDER BY B.Booking_date;
+    B.Booking_date;
+GO

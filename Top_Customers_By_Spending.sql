@@ -1,6 +1,3 @@
-USE CinemaBooking;
-GO
-
 SELECT 
     u.UserID,
     u.Name,
