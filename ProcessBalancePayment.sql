@@ -1,81 +1,48 @@
-GO
 CREATE PROCEDURE ProcessBalancePayment
     @bookingId INT,
     @userId INT
 AS
 BEGIN
     SET NOCOUNT ON;
-
-    DECLARE @totalPrice MONEY;
-    DECLARE @currentBalance MONEY;
-
+    DECLARE @totalPrice DECIMAL(10,2);
 
     SET @totalPrice = dbo.fn_CalculateTotalPrice(@bookingId, 0);
 
+    UPDATE [User] 
+    SET balance = balance - @totalPrice 
+    WHERE UserID = @userId AND balance >= @totalPrice;
 
-    IF @totalPrice = 0
+    IF @@ROWCOUNT > 0
     BEGIN
-        PRINT 'Error: No seats found for this booking or booking does not exist.';
-        RETURN;
-    END
+        INSERT INTO Payment (BookingID, Status, Date) 
+        VALUES (@bookingId, 'Success', GETDATE());
 
- 
-    SELECT @currentBalance = balance FROM [User] WHERE userId = @userId;
+        UPDATE Booking SET Status = 'Confirmed' WHERE BookingID = @bookingId;
 
+        UPDATE i
+        SET i.Status = 'Reserved'
+        FROM Includes i
+        JOIN Has H ON i.SeatNumber = H.SeatNumber AND i.HallID = H.HallID
+        JOIN Booking B ON H.BookingID = B.BookingID
+        WHERE B.BookingID = @bookingId AND i.ShowID = B.ShowID;
 
-    IF @currentBalance >= @totalPrice
-    BEGIN
-        BEGIN TRANSACTION;
-        BEGIN TRY
-       
-            UPDATE [User] 
-            SET balance = balance - @totalPrice 
-            WHERE userId = @userId;
-
-         
-            IF EXISTS (SELECT 1 FROM Payment WHERE bookingId = @bookingId)
-            BEGIN
-                UPDATE Payment 
-                SET status = 'Success', 
-                    date = GETDATE()
-                WHERE bookingId = @bookingId;
-            END
-            ELSE
-            BEGIN
-                INSERT INTO Payment (bookingId, date, status)
-                VALUES (@bookingId, GETDATE(), 'Success');
-            END
-
-            UPDATE Booking 
-            SET status = 'Confirmed' 
-            WHERE bookingId = @bookingId;
-
-            COMMIT TRANSACTION;
-            PRINT 'Payment Successful. ' + CAST(@totalPrice AS VARCHAR) + ' EGP deducted from balance.';
-        END TRY
-        BEGIN CATCH
-            ROLLBACK TRANSACTION;
-            PRINT 'Transaction Failed: An error occurred during processing.';
-        END CATCH
+        PRINT 'Payment Successful.';
     END
     ELSE
     BEGIN
+        INSERT INTO Payment (BookingID, Status, Date) 
+        VALUES (@bookingId, 'Failed: Insufficient Funds', GETDATE());
 
-        UPDATE Booking 
-        SET status = 'Cancelled' 
-        WHERE bookingId = @bookingId;
+        UPDATE Booking SET Status = 'Cancelled' WHERE BookingID = @bookingId;
 
-        -- Log the failed attempt in Payment table
-        IF EXISTS (SELECT 1 FROM Payment WHERE bookingId = @bookingId)
-        BEGIN
-            UPDATE Payment SET status = 'Failed: Insufficient Funds', date = GETDATE() WHERE bookingId = @bookingId;
-        END
-        ELSE
-        BEGIN
-            INSERT INTO Payment (bookingId, date, status) VALUES (@bookingId, GETDATE(), 'Failed: Insufficient Funds');
-        END
+        UPDATE i
+        SET i.Status = 'Available'
+        FROM Includes i
+        JOIN Has H ON i.SeatNumber = H.SeatNumber AND i.HallID = H.HallID
+        JOIN Booking B ON H.BookingID = B.BookingID
+        WHERE B.BookingID = @bookingId AND i.ShowID = B.ShowID;
 
-        PRINT 'Payment Failed: Insufficient balance. Current Balance: ' + CAST(@currentBalance AS VARCHAR);
+        PRINT 'Payment Failed: Insufficient balance. Seats have been released.';
     END
 END;
 GO
