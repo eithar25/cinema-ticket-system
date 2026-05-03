@@ -1,3 +1,8 @@
+
+   CREATE TYPE [dbo].[SeatTableType] AS TABLE(
+        seatNumber INT
+    );
+
 CREATE PROCEDURE [dbo].[BOOK_TICKET]
     @userId INT,
     @showId INT,
