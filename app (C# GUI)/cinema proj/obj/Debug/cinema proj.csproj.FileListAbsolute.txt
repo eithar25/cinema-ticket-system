@@ -1,0 +1,111 @@
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+E:\ASU(CAIE)\semester 4\databases\project\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\Seif Shehta\Downloads\cinema proj\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ManagerDashboard.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\maria\Downloads\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ManagerDashboard.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\Seif Shehta\Downloads\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe.config
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ManagerDashboard.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\rsmoh\Desktop\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ManagerDashboard.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\Seif Shehta\Downloads\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Profile.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.AssemblyReference.cache
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe.config
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.exe
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.pdb
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe.config
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.exe
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\bin\Debug\cinema proj.pdb
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Dashboard.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Home.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.LoginForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ManagerDashboard.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.MoviesForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Profile.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.Properties.Resources.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.RegisterForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.ShowsForm.resources
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.GenerateResource.cache
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema proj.csproj.CoreCompileInputs.cache
+C:\Users\rsmoh\Desktop\cinema projectt333\cinema projectt22222\cinema projectt22222\cinema project (1)\cinema project\cinema proj1\cinema proj\cinema proj\obj\Debug\cinema_proj.SeatSelectionForm.resources
