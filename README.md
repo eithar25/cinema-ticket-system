@@ -166,4 +166,3 @@ All tables satisfy **1NF, 2NF, 3NF, and BCNF**:
 | Youssef Mohamed Wafaey Abouelseoud | 24P0177 |
 | Youssef Shehta Abdelfattah Zayed | 24P0191 |
 
-**Submitted to:** Dr. Nivin Atef | TA: Eng. Esraa Karam
